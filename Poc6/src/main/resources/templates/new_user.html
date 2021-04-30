@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>User Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>User Management System</h1>
+		<hr>
+		<h2>New User</h2>
+
+		<form action="#" th:action="@{/saveUser}" th:object="${user}"
+			method="POST">
+
+			<table class="table table-striped table-responsive-md">
+				<tr>
+					<th>First name:</th>
+					<td><input type="text" th:field="*{fname}"
+						placeholder="User First Name" class="form-control mb-4 col-4"><br>
+						<h6 th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}">First
+							Name error</h6></td>
+
+				</tr>
+
+				<tr>
+					<th>Last name:</th>
+					<td><input type="text" th:field="*{lname}"
+						placeholder="User Last Name" class="form-control mb-4 col-4"><br>
+						<h6 th:if="${#fields.hasErrors('lname')}" th:errors="*{lname}">Last
+							Name error</h6></td>
+
+				</tr>
+
+				<tr>
+					<th>Contact:</th>
+					<td><input type="text" th:field="*{contact}"
+						placeholder="User Contact" class="form-control mb-4 col-4"><br>
+						<h6 th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}">Contact
+							error</h6></td>
+
+				</tr>
+
+				<tr>
+					<th>Email:</th>
+					<td><input type="text" th:field="*{email}"
+						placeholder="User Email" class="form-control mb-4 col-4"><br>
+						<h6 th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+							error</h6></td>
+				</tr>
+
+				<tr>
+					<th>City:</th>
+					<td><input type="text" th:field="*{city}"
+						placeholder="User City" class="form-control mb-4 col-4"><br>
+							<h6 th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City
+						error</h6>
+				
+						</td>
+				</tr>
+				
+				<tr>
+					<th>Pincode:</th>
+					<td><input type="text" th:field="*{pincode}"
+						placeholder="User Pincode" class="form-control mb-4 col-4"><br>
+							<h6 th:if="${#fields.hasErrors('pincode')}" th:errors="*{pincode}">Pincode
+						error</h6>
+				
+						</td>
+				</tr>
+
+				<tr>
+					<th>Country:</th>
+					<td><input type="text" th:field="*{country}"
+						placeholder="User Country" class="form-control mb-4 col-4">
+						<br>
+						<h6 th:if="${#fields.hasErrors('country')}" th:errors="*{country}">Country
+						error</h6>
+						</td>
+					
+				</tr>
+
+
+			</table>
+
+			<button type="submit" class="btn btn-info col-2">Save User</button>
+		</form>
+
+		<hr>
+
+		<a th:href="@{/}"> Back to User List</a>
+	</div>
+</body>
+
+</html>
